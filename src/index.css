@@ -53,9 +53,15 @@ aside ul {
   text-decoration: none;
 }
 
+.header-links {
+  display: flex;
+  justify-content: space-between;
+}
+
 .header-links a {
   color: #ffffff;
   text-decoration: none;
+  margin: 1rem;
 }
 
 .header-links a:hover {
@@ -70,6 +76,8 @@ aside ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #203040;
+  color: #ffffff;
 }
 
 /* Products Section */

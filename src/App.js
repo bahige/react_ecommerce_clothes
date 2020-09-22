@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import "./App.css";
-import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
 import Products from "./components/Products";
+import Sidebar from "./components/Sidebar";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
   const [open, setOpen] = useState("");
@@ -19,32 +22,12 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <div className="grid-container">
-          <header className="header">
-            <div className="brand">
-              <button onClick={openMenu}>&#9776;</button>
-              <Link to="/">amazona</Link>
-            </div>
-            <div className="header-links">
-              <a href="cart.html">Cart</a>
-              <a href="signin.html">Sign In</a>
-            </div>
-          </header>
+          <Header openMenuFromHeader={openMenu}></Header>
+
           <aside className={`sidebar ${open}`}>
-            <div>
-              <h3>Shopping Categories</h3>
-              <button className="sidebar-close" onClick={closeMenu}>
-                X
-              </button>
-            </div>
-            <ul>
-              <li>
-                <a href="index.html">Pants</a>
-              </li>
-              <li>
-                <a href="index.html">Shirts</a>
-              </li>
-            </ul>
+            <Sidebar closeMenuFromSidebar={closeMenu}></Sidebar>
           </aside>
+
           <Switch>
             <main className="main">
               <div className="content">
@@ -54,7 +37,7 @@ function App() {
             </main>
           </Switch>
 
-          <footer className="footer">All Rights Reserved.</footer>
+          <Footer></Footer>
         </div>
       </div>
     </BrowserRouter>
