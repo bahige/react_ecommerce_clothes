@@ -11,6 +11,11 @@ body {
 
 #root {
   height: 100%;
+  width: 100%;
+}
+
+.full-width {
+  width: 100%;
 }
 
 a {
@@ -38,7 +43,7 @@ aside ul {
 
 .header {
   grid-area: header;
-  background-color: #203040;
+  background-color: #121ecf;
   color: #ffffff;
   display: flex;
   justify-content: space-between;
@@ -65,8 +70,14 @@ aside ul {
 }
 
 .header-links a:hover {
-  color: #ff8000;
+  font-weight: bold;
 }
+
+.menuIcon {
+  margin-left: 20px;
+  display: none;
+}
+
 .main {
   grid-area: main;
 }
@@ -76,7 +87,7 @@ aside ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #203040;
+  background-color: #121ecf;
   color: #ffffff;
 }
 
@@ -178,4 +189,161 @@ aside ul {
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
+}
+
+/* admin */
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.dropdown-content {
+  position: absolute;
+  display: none;
+  right: 0;
+  padding: 1rem;
+  list-style-type: none;
+  background-color: #121ecf;
+  margin: 0;
+  margin-top: 0.4rem;
+}
+
+.display-dropdown-block {
+  display: block;
+}
+
+.display-dropdown-hide {
+  display: none;
+}
+
+.dropdown:hover {
+  cursor: pointer;
+}
+
+/* filter */
+
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+  margin: 1rem auto;
+  max-width: 45rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.filter input,
+.filter button,
+.filter select {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 0.1rem #c0c0c0 solid;
+  font-size: 1.6rem;
+}
+.categories {
+  padding: 0;
+  list-style-type: none;
+}
+.categories a {
+  display: flex;
+  padding: 1rem;
+}
+
+.categories a:hover {
+  background-color: #c0c0c0;
+}
+
+.user-header {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.profile {
+  height: 100vh;
+}
+
+/* Filter*/
+.filter {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.filter li,
+.filter li form,
+.filter li form input {
+  display: flex;
+  margin: 0.1rem;
+}
+
+.filter li:first-child {
+  margin-right: 0.5rem;
+}
+
+@media screen and (min-width: 415px) and (max-width: 1024px) {
+  body {
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .sidebar {
+    width: 20rem;
+  }
+
+  .sidebar h3 {
+    font-size: 20px;
+  }
+
+  nav .header-links {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background: #121ecf;
+  }
+
+  nav .header-links div {
+    display: block;
+    padding: 1rem 0;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  nav .header-links > div {
+    border: black solid 1px;
+  }
+
+  .dropdown-content {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .dropdown-content div {
+    margin: 1rem 1rem;
+  }
+
+  .dropdown:first-child {
+    margin: 1rem 0;
+  }
+
+  .menuIcon {
+    display: block;
+    font-size: 3rem;
+    padding: 0.5rem;
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+  }
+
+  .displayMenu {
+    display: block;
+  }
+
+  .hideMenu {
+    display: none;
+    max-height: 0px;
+  }
 }

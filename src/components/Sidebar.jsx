@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Sidebar = (props) => {
   const { closeMenuFromSidebar } = props;
@@ -11,12 +12,13 @@ const Sidebar = (props) => {
           X
         </button>
       </div>
-      <ul>
+      <ul className="categories">
         <li>
-          <a href="index.html">Pants</a>
+          <Link to="/category/Pants">Pants</Link>
         </li>
+
         <li>
-          <a href="index.html">Shirts</a>
+          <Link to="/category/Shirts">Shirts</Link>
         </li>
       </ul>
     </div>
